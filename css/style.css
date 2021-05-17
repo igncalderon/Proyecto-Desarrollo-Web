@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap');
+
+body{
+    font-family: 'Titillium Web', sans-serif;
+    /* background-color: rgb(212, 209, 209); */
+    background-color: #ffffff;
+}
+
+/* HEADER */
+.navbar{
+    box-shadow: 0 2px 4px #ffffff;
+    min-height: 80px;
+}
+.navbar-toggler {font-size: 20px;}
+.navbar-toggler:focus{ outline: none;}
+
+@media (min-width: 992px) { 
+    .btn-login{
+        border: 1px groove #ffffffe3;
+        border-radius: 6px;
+        background-color: transparent;
+        } 
+ }
+.btn-login{margin: 0px 4px;}
+.nav-link{margin: 0px 5px;}
+#hero{
+    background-image: url('../image/hero.png') ;
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 700px;
+    color: #ffff;
+    transition: all .9s ease; 
+    width:100%;
+    overflow: hidden;
+}
+#hero:hover{
+    transform: scale(0.95);
+}
+
+/* FLEX ATENCION */
+
+.icono{
+    font-size:60px;
+} 
+.motivo-titulo{
+    padding: 3px 0px;
+    margin-left:-2px;
+}
+.flex-motivos{
+    padding: 0px;
+}
+.flex-motivos{margin-bottom: 30px;}
+
+/* PLANES INDEX */
+.content{
+    margin-top:40px;    
+}
+.plan-one {
+    margin: 0 0 20px 0;
+    width: 100%;
+    position: relative;
+}
+
+.plan-card {
+    background: #fff;
+    margin-bottom: 30px;
+    transition: .5s;
+    border: 0;
+    border-radius: .55rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5);
+}
+
+.plan-one .pricing-header {
+    padding: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.plan-one .pricing-header .plan-title {
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding: 10px 0;
+    font-weight: 600;
+    background: #5a99ee;
+    margin: 0;
+}
+
+.plan-one .pricing-header .plan-cost {
+    color: #ffffff;
+    background: #71a7f0;
+    padding: 15px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.plan-one .pricing-header .plan-save {
+    color: #ffffff;
+    background: #84b3f2;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.plan-one .pricing-header.green .plan-title {
+    background: #47BCC7;
+}
+
+.plan-one .pricing-header.green .plan-cost {
+    background: #5bc3cd;
+}
+
+.plan-one .pricing-header.green .plan-save {
+    background: #6ac9d2;
+}
+
+.plan-one .pricing-header.orange .plan-title {
+    background: #fc8165;
+}
+
+.plan-one .pricing-header.orange .plan-cost {
+    background: #fd967e;
+}
+
+.plan-one .pricing-header.orange .plan-save {
+    background: #fdaa97;
+}
+
+.plan-one .plan-features {
+    border: 1px solid #e6ecf3;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.plan-one .plan-features li {
+    padding: 10px 15px 10px 40px;
+    margin: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    border-bottom: 1px solid #e6ecf3;
+    line-height: 100%;
+}
+
+.plan-one .plan-footer {
+    border: 1px solid #e6ecf3;
+    border-top: 0;
+    background: #ffffff;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+@media (max-width: 767px) {
+    .plan-one .pricing-header {
+        text-align: center;
+    }
+    .plan-one .pricing-header i {
+        display: block;
+        float: none;
+        margin-bottom: 20px;
+    }
+}
+
+.texto{
+    margin-top: 5vh;
+    text-align: center;
+    border-bottom: 2px solid gray;}
+
+/* FOOTER */
+
+.footer-icon{
+    font-size: 20px;
+    padding:0px 6px;
+    margin-top: 5px;
+}
+.footer-contacto{
+    display: inline-block;
+   padding:0px;
+}
+.footer-redes{
+    font-size: 30px;
+}
+.footer-redes-icono{
+    margin: 0px 8px;
+}
+
+/* SECTION ACCESORIOS */
+.section-cards{
+    margin-top: 20px;
+    width: 100%;
+    min-height: 100vh;
+    
+  }
+  .cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    margin: auto;
+   
+  }
+  .cards .new-arrival{
+    width: 100%;
+    margin-top:20px;
+  }
+  .cards .new-arrival h1{
+    text-align: center;
+    font-size: 40px;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .cards .new-arrival .nombre-articulo::after{
+    content: "";
+    height: 5px;
+    width: 325px;
+    background-color: #222;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+  }
+  .card__accesorios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #e6ecf3;
+    border-radius:10px;
+    width: 325px;
+    text-align: center;
+    margin:25px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  .image-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-section img{
+    width: 100%;
+    height: auto;
+  }
+  .description{
+    text-align: center;
+    margin-top: 20px;
+  }
+  .description .nombre-articulo{
+    font-size: 20px;
+    text-transform: uppercase;
+    color:#222;
+    letter-spacing: 2px;
+    margin-top: 10px;
+  }
+  .description p{
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+  }
+  .description span{
+    margin-left: 8px;
+  }
+  .description del{
+    margin-left: 7px;
+    font-size: 15px;
+    color:#f2533a;
+  }
+  .button-group{
+    margin-top: 30px;
+  }
+  .button-group .buy{
+    background-color: #1976d2;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color:#fff;
+  }
+  .button-group .buy:hover{
+    background-color: #0b348d;
+    transition: 0.6s ease;
+  }
+  .button-group .cart{
+    background-color: #f2533a;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color:#fff;
+  }
+  .button-group .cart:hover{
+    background-color: #0b348d;
+    transition: 0.6s ease;
+  }
+  .star-icons{
+    margin-top:20px;
+    margin-bottom: 10px;
+  }
+  .star-icons i{
+    color:#db8b21;
+    padding: 0px 3px;
+    font-size: 18px;
+  }
+  
+  .buscador{
+    margin: 0 auto ;
+    align-content: center ;
+  }
