@@ -82,3 +82,18 @@ $(function(){
   });
 
 });
+
+function carrito(){
+	alert("Producto agregado al carrito");
+}
+
+
+
+// PAGOS
+
+function comprar(){
+	alert("Pago realizado, a la brevedad te va a llegar un mail con la confirmación");
+}
+function descuento(){
+	alert("Descuento aplicado");
+}

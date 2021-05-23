@@ -47,7 +47,7 @@ body{
 /* FLEX ATENCION */
 
 .icono{
-    font-size:60px;
+    font-size:40px;
 } 
 .motivo-titulo{
     padding: 3px 0px;
@@ -56,6 +56,18 @@ body{
     font-size: 25px;
   
 }
+
+.container-motivos1{
+border: 2px groove rgb(131, 145, 224);
+border-radius: 5px;
+margin-right:5px;
+}
+.container-motivos2{
+  border: 2px groove rgb(131, 145, 224);
+  border-radius: 5px;
+  margin-left:5px;
+}
+
 .flex-motivos{
     padding: 0px;
 }
@@ -188,6 +200,10 @@ body{
     border-bottom: 2px solid gray;}
 
 /* FOOTER */
+.bi-bicicleta{
+  margin-right:5px;
+  font-size: 18px;
+}
 
 .footer-icon{
     font-size: 20px;
@@ -206,10 +222,13 @@ body{
 }
 
 /* SECTION ACCESORIOS */
+
+
 .section-cards{
     margin-top: 20px;
     width: 100%;
     min-height: 100vh;
+    margin-bottom: 5vh;
     
   }
   .cards{
@@ -332,8 +351,9 @@ body{
   }
   
   .buscador{
-    margin: 0 auto ;
+    margin: auto;
     align-content: center ;
+    margin-bottom: 4vh;
   }
 
 
@@ -518,7 +538,7 @@ body{
 @media (max-width: 575.98px) { 
   .btn-form-contacto{
   width: 60%;
-} 
+  } 
 #hero{
   background-image: url('../image/pexels-jahangeer-bm-1619299.jpg') ;
   background-size: cover;
@@ -529,12 +549,21 @@ body{
   width:100%;
   overflow: hidden;
 }
+.boton-buscar{
+  width: 100%;
+}
+
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .btn-form-contacto{
     width: 60%;
   } 
+ 
  }
 
-   
+  /* COMPRA FORM */
+ 
+.container-checkout{
+  margin-bottom: 5vh;
+}

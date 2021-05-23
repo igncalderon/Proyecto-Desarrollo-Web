@@ -82,11 +82,15 @@
                   <form class="form-inline my-2 my-lg-0 ">
                      <div class="buscador">
                         <input class="form-control mr-sm-2 text-center" type="search" placeholder="Buscar..." aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Buscar</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0 boton-buscar" type="submit">Buscar</button>
                      </div>
                     
                    </form>
                </div>
+               <div>
+       
+               </div>
+               
                <div class="card__accesorios">
                   <div class="image-section">
                      <img src="https://http2.mlstatic.com/D_NQ_NP_851177-MPE32058933198_092019-O.jpg" alt="">
@@ -97,7 +101,8 @@
                   </div>
                   <div class="button-group">
                      <a href="compra.html" class="buy">Comprar</a>
-                     <a href="" class="cart">Añadir al carro</a>
+                     <button onclick="carrito()">hola</button>
+                     <a href="" onclick=carrito() class="cart">Añadir al carro</a>
                   </div>
                   <div class="star-icons">
                      <a href=""><i class="fas fa-star"></i></a>
@@ -310,7 +315,7 @@
          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
            <!-- Content -->
            <h6 class="text-uppercase fw-bold mb-4">
-             <i class="fas fa-gem me-3"></i>TU SEGURO
+            <i class="bi bi-bicycle bi-bicicleta"></i>TU SEGURO
            </h6>
            <p>
              Somos una de las mejores empresas del mercado para garantizar la seguridad de tu bicicleta
@@ -336,10 +341,10 @@
              Links útiles
            </h6>
            <!-- Links -->
-             <a href="html/accesorios.html" class="text-reset">Productos</a>
+             <a href="../html/accesorios.html" class="text-reset">Productos</a>
            </p>
            <p>
-             <a href="html/nosotros.html" class="text-reset">Contacto</a>
+             <a href="../html/nosotros.html" class="text-reset">Contacto</a>
            </p>
          </div>
          <!-- Grid column -->
@@ -368,5 +373,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="../javascript/index.js"></script>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </html>
