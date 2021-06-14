@@ -2,6 +2,8 @@ const categorias = document.querySelectorAll('#categorias .categoria');
 const contenedorPreguntas = document.querySelectorAll('.contenedor-preguntas');
 let categoriaActiva = null;
 let Registrados = []
+let nombreRegistradosAlfabetico = []
+
 
 categorias.forEach((categoria) => {
 	categoria.addEventListener('click', (e) => {
@@ -208,5 +210,9 @@ function RegistrarFormulario(){
 	usuarioNuevo.usuarioRegistrado();
 	Registrados.push(usuarioNuevo);
 	console.log(Registrados);
-
+	console.log(Registrados)
+	// ORDENAR ALFABETICAMENTE LOS NOMBRES REGISTRADOS
+	nombreRegistradosAlfabetico.push(nombreRegisterValue)
+	nombreRegistradosAlfabetico.sort();
+	console.log(nombreRegistradosAlfabetico);
 }
