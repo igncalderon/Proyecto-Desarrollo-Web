@@ -1,9 +1,12 @@
-const categorias = document.querySelectorAll('#categorias .categoria');
+const categorias = document.querySelectorAll('.categoria');
 const contenedorPreguntas = document.querySelectorAll('.contenedor-preguntas');
 let categoriaActiva = null;
 let Registrados = []
 let nombreRegistradosAlfabetico = []
 
+
+// Esta parte corresponde al index, preguntas frecuentes. Sirve para que sea dinamico. Cada vez que seleccionas
+// un div, te aparecen sus preguntas correspondientes
 
 categorias.forEach((categoria) => {
 	categoria.addEventListener('click', (e) => {
@@ -175,13 +178,28 @@ function validarConsultaFormulario(){
 
 }
 function enviarFormulario(){
+	const loader = document.getElementById('loader')
+	const parrafo = document.getElementById('texto-register');
+	const subtitulo = document.getElementById('subtitulo-consulta');
 	if(!validarNombreFormulario() || !validarApellidoFormulario() || !validarEmailFormulario() || !validarConsultaFormulario()){
-		console.log("No se envio")
+		alert('hola')
+		
 	}else{
-		let $obtenerNombre = document.querySelector('#nombre-formulario').value
-		alert(`${$obtenerNombre}, tu consulta fue enviada correctamente. A la brevedad nos contactaremos con usted`)
+		subtitulo.className = 'consulta-oculto'
+		
+		loader.className = 'loader'
+		setTimeout(() => {
+			loader.className = 'consulta-oculto'
+			parrafo.className = 'consulta-mostrar'
+		},3000)
+		setTimeout(() => {
+			parrafo.className = 'consulta-oculto'
+		},3000)
 	}
 }
+
+
+// PANTALLA REGISTRAR
 
 function RegistrarFormulario(){
 	
@@ -205,7 +223,6 @@ function RegistrarFormulario(){
 		alert(`Registrado correctamente ${this.nombre}`)
 	}
 }
-	
 	let usuarioNuevo = new Usuario(nombreRegisterValue, apellidoRegisterValue, emailRegisterValue, contrasenaRegisterValue);
 	usuarioNuevo.usuarioRegistrado();
 	Registrados.push(usuarioNuevo);
