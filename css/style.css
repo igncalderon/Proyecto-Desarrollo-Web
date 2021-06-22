@@ -329,6 +329,7 @@ margin-right:5px;
   }
   .button-group .cart{
     background-color: #f2533a;
+    border: 0;
     font-size: 14px;
     padding: 8px 20px;
     border-radius: 5px;
@@ -599,4 +600,29 @@ margin-right:5px;
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+/* SHOPPING CART */
+.cart {
+  position: relative;
+  margin: 10px 2px 10px 20px;
+  font-size: 20px;
+}
+#- {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  background: red;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
+}
+#cart_menu_oculto{
+  display: none;
 }
