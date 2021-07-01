@@ -84,6 +84,7 @@ carrito = (id) =>{
         if(id == productos[i].id){
            carro.push(productos[i]) 
         }
+
     }
     if(carro.length == 1){
         cart.setAttribute('id', 'cart_menu_num')
@@ -92,4 +93,5 @@ carrito = (id) =>{
         cartCantidad.textContent = carro.length
     }
     console.log(carro)
+    
 }
