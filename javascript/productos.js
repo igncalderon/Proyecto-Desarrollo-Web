@@ -75,6 +75,10 @@ console.log(productos)
 //     }
 // }
 // console.log(vector)
+$('#filterBtn').click(() => {
+    let filtrado = $('#filterInput').val()
+    alert(`Filtrado por ${filtrado}`)
+})
 
 carrito = (id) =>{
     let cart = document.getElementById('cart_menu_oculto');

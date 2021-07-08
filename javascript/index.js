@@ -109,13 +109,13 @@ function descuento(){
 
 function validarNombreFormulario(){
 	const expRegNombre=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-	let $obtenerNombre = document.querySelector('#nombre-formulario');
+	let $obtenerNombre = $('#nombre-formulario').val();
 	
-	if(!$obtenerNombre.value){
+	if(!$obtenerNombre){
 		alert("El campo Nombre es requerido");
 		$obtenerNombre.focus();
 		return false;
-	}else if(!expRegNombre.exec($obtenerNombre.value)){
+	}else if(!expRegNombre.exec($obtenerNombre)){
 		alert("El campo Nombre no tiene el formato correcto")
 	}else{
 		var objeto = [true,$obtenerNombre];
@@ -186,15 +186,12 @@ function enviarFormulario(){
 		
 	}else{
 		subtitulo.className = 'consulta-oculto'
-		
 		loader.className = 'loader'
 		setTimeout(() => {
 			loader.className = 'consulta-oculto'
 			parrafo.className = 'consulta-mostrar'
 		},3000)
-		setTimeout(() => {
-			parrafo.className = 'consulta-oculto'
-		},3000)
+		
 	}
 }
 
