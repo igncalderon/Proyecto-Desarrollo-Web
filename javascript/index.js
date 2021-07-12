@@ -5,8 +5,17 @@ let Registrados = []
 let nombreRegistradosAlfabetico = []
 
 
+	   
 // Esta parte corresponde al index, preguntas frecuentes. Sirve para que sea dinamico. Cada vez que seleccionas
 // un div, te aparecen sus preguntas correspondientes
+
+$(document).ready(function () {
+	$('.second-button').on('click', function () {
+  
+	  $('.animated-icon2').toggleClass('open');
+	});
+  });
+
 
 categorias.forEach((categoria) => {
 	categoria.addEventListener('click', (e) => {
@@ -179,19 +188,20 @@ function validarConsultaFormulario(){
 }
 function enviarFormulario(){
 	const loader = document.getElementById('loader')
-	const parrafo = document.getElementById('texto-register');
-	const subtitulo = document.getElementById('subtitulo-consulta');
+	// const parrafo = document.getElementById('texto-register');
+	// const subtitulo = document.getElementById('subtitulo-consulta');
 	if(!validarNombreFormulario() || !validarApellidoFormulario() || !validarEmailFormulario() || !validarConsultaFormulario()){
-		alert('hola')
+		alert('Error')
 		
 	}else{
-		subtitulo.className = 'consulta-oculto'
+		// subtitulo.className = 'consulta-oculto'
+		$("#subtitulo-consulta").hide()
 		loader.className = 'loader'
 		setTimeout(() => {
 			loader.className = 'consulta-oculto'
-			parrafo.className = 'consulta-mostrar'
+			$("#texto-register").show()
 		},3000)
-		
+		$("#texto-register").hide()
 	}
 }
 
@@ -223,10 +233,11 @@ function RegistrarFormulario(){
 	let usuarioNuevo = new Usuario(nombreRegisterValue, apellidoRegisterValue, emailRegisterValue, contrasenaRegisterValue);
 	usuarioNuevo.usuarioRegistrado();
 	Registrados.push(usuarioNuevo);
-	console.log(Registrados);
+	
 	console.log(Registrados)
 	// ORDENAR ALFABETICAMENTE LOS NOMBRES REGISTRADOS
 	nombreRegistradosAlfabetico.push(nombreRegisterValue)
 	nombreRegistradosAlfabetico.sort();
 	console.log(nombreRegistradosAlfabetico);
 }
+
