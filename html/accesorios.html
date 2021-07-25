@@ -35,7 +35,7 @@
             </li>
             
             <button type="button" class="btn btn-info btn-round btn-login" id="boton" data-toggle="modal" data-target="#loginModal">Iniciar sesión</button>
-            <a href="URL-HERE" class="cart" title="Carrito" target="_blank" rel="nofollow"><i class="fas fa-shopping-cart"></i>
+            <a href="#carrito" class="cart" title="Carrito"><i class="fas fa-shopping-cart"></i>
                <span id="cart_menu_oculto" data-action="cart-can" class="badge rounded-circle">1</span>
              </a>
          
@@ -81,8 +81,15 @@
          <div class="section-cards"> 
             <!-- ACA MEDIANTE JAVASCRIPT AÑADO LOS ELEMENTOS -->
        </div>   
-         
-       <div id='hola'>Probando</div>
+       <div class="shopping-cart">
+          <h1 id='titulo-cart' class='oculto'>Carrito</h1>
+        <div class='items-cart'>
+          
+        </div>
+        </div>
+        
+        </div>
+       
 
 <!-- Footer -->
 <footer class="text-center bg-dark text-light">
@@ -177,9 +184,9 @@
  </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-
 <script src="../javascript/productos.js"></script>
-<!-- <script src="../javascript/index.js"></script> -->
+<!-- 
+
+<script src="../javascript/index.js"></script> -->
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </html>
