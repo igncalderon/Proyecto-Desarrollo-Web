@@ -229,6 +229,7 @@ margin-right:5px;
     width: 100%;
     min-height: 100vh;
     margin-bottom: 5vh;
+   
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -287,12 +288,12 @@ margin-right:5px;
     overflow: hidden;
   }
   .image-section img{
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 300px;
   }
   .description{
     text-align: center;
-    margin-top: 20px;
+    
   }
   .description .nombre-articulo{
     font-size: 20px;
@@ -315,7 +316,7 @@ margin-right:5px;
     color:#f2533a;
   }
   .button-group{
-    margin-top: 30px;
+    margin-top: 5px;
   }
   .button-group .buy{
     background-color: #1976d2;
@@ -330,7 +331,7 @@ margin-right:5px;
     background-color: #0b348d;
     transition: 0.6s ease;
   }
-  .button-group .cart{
+  .button-group .cart, .style-btnFinalizar{
     background-color: #f2533a;
     border: 0;
     font-size: 14px;
@@ -340,7 +341,7 @@ margin-right:5px;
     letter-spacing: 1px;
     color:#fff;
   }
-  .button-group .cart:hover{
+  .button-group .cart:hover, .style-btnFinalizar:hover{
     background-color: #0b348d;
     transition: 0.6s ease;
   }
@@ -353,13 +354,12 @@ margin-right:5px;
     padding: 0px 3px;
     font-size: 18px;
   }
-  
-  .buscador{
-    margin: auto;
-    align-content: center ;
-    margin-bottom: 4vh;
+  .cantidad-articulo{
+    width: 60px;
+    text-align: center;
+    border: 2px solid #0b348d;
+    border-radius: 5px;
   }
-
 
 
   /* PREGUNTAS FRECUENTES MAIN */
@@ -805,24 +805,61 @@ margin-right:5px;
 
 
   /* CART VIEW */
+  .shopping-cart{
+    border: 3px solid #e6ecf3;
+    margin: 4px 10%;
+  }
+  #titulo-cart{
+    text-align: center;
+    margin-top: 25px;
+  }
   .items-cart{
     display: flex;
     flex-direction: column;
+    
+  }
+  .BorrarItemCart{
+    background-color: #1976d2;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color:#fff;
+    border: 0;
+  }
+  .BorrarItemCart:hover{
+    background-color: #0b348d;
+    transition: 0.6s ease;
   }
   .item-cart{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 16vh;
   }
   .description-item{
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 40%;
   }
   .img-cart{
     width: 100px;
-    margin: 100px
+    margin: 0 80px;
   }
   .oculto{
     display: none;
+  }
+  .divCartPrecioFinalizar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    margin: 4px
+  }
+
+  .total{
+    font-size: 22px;
   }
