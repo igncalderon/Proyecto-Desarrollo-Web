@@ -34,15 +34,27 @@
           <li class="nav-item">
             <a class="nav-link" href="nosotros.html">Nosotros <span class="sr-only">(current)</span></a>
           </li>
+          <a href="#titulo-cart" class="cart" title="Carrito"><i class="fas fa-shopping-cart"></i>
+            <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle"></span>
+          </a>
+          <div id="usuario-div">
+            <input id='name-usuario' placeholder="Nombre de usuario">
+            <button class="boton-secundario newpadding" onclick=ingresarUsuario()>Ingresar</button>
+          </div>
+          
         </ul>
+        
       </div>
     </div>
     </nav>
+    <div>
+      <h1 id="titulo-accesorios" class="titulo-cart-usuario">Ingrese tu nombre de Usuario</h1>
+    </div>
     <div class="section-cards"> 
       <!-- ACA MEDIANTE JAVASCRIPT AÑADO LOS ELEMENTOS -->
     </div>   
     <div class="shopping-cart">
-      <h1 id='titulo-cart' class='oculto'>Carrito</h1>
+      <h1 name="carrito" id='titulo-cart' class='oculto'>Carrito</h1>
         <div class='items-cart'>
             
           <!-- ACA INSERTO LOS ITEMS DEL CARRITO -->

@@ -71,32 +71,19 @@ preguntas.forEach((pregunta) => {
 
 // ANIMACION JQUERY PARA QUE SCROLLEE CUANDO REDIRECCIONO EN LA MISMA PAGINA
 
-$(function(){
-
-    $('a[href*=#]').click(function() {
-
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-        && location.hostname == this.hostname) {
-
-            var $target = $(this.hash);
-
-            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
-
-            if ($target.length) {
-
-                var targetOffset = $target.offset().top;
-
-                $('html,body').animate({scrollTop: targetOffset}, 1000);
-
-                return false;
-
-           }
-
+$(document).ready(function() {
+    $('a[href^="#"]').click(function() {
+      var destino = $(this.hash);
+      if (destino.length == 0) {
+        destino = $('a[name="' + this.hash.substr(1) + '"]');
       }
-
+      if (destino.length == 0) {
+        destino = $('html');
+      }
+      $('html, body').animate({ scrollTop: destino.offset().top }, 1000);
+      return false;
+    });
   });
-
-});
 
 function carrito(){
 	alert("Producto agregado al carrito");
@@ -177,7 +164,7 @@ function validarTelefonoFormulario(){
 function validarConsultaFormulario(){
 	const $obtenerConsulta = document.querySelector('#consulta-formulario');
 	let longConsulta = $obtenerConsulta.value
-	console.log(longConsulta.length)
+	
 
 	if((longConsulta.length + 1) <= 10 ){
 		alert("El campo debe tener mas de 10 caracteres");
@@ -188,13 +175,12 @@ function validarConsultaFormulario(){
 }
 function enviarFormulario(){
 	const loader = document.getElementById('loader')
-	// const parrafo = document.getElementById('texto-register');
-	// const subtitulo = document.getElementById('subtitulo-consulta');
+
 	if(!validarNombreFormulario() || !validarApellidoFormulario() || !validarEmailFormulario() || !validarConsultaFormulario()){
 		alert('Error')
 		
 	}else{
-		// subtitulo.className = 'consulta-oculto'
+		
 		$("#subtitulo-consulta").hide()
 		loader.className = 'loader'
 		setTimeout(() => {
@@ -234,10 +220,10 @@ function RegistrarFormulario(){
 	usuarioNuevo.usuarioRegistrado();
 	Registrados.push(usuarioNuevo);
 	
-	console.log(Registrados)
+	
 	// ORDENAR ALFABETICAMENTE LOS NOMBRES REGISTRADOS
 	nombreRegistradosAlfabetico.push(nombreRegisterValue)
 	nombreRegistradosAlfabetico.sort();
-	console.log(nombreRegistradosAlfabetico);
+	
 }
 

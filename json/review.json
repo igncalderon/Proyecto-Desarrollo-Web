@@ -1,0 +1,16 @@
+[{
+    "nombre": "Agustín Gómez",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCG0_7rw2zLSQMWaW1POT28LKumcIgXdYitXn9e0YOySrg1xj1rqYP7Cr5JGgkgH-siGc&usqp=CAU",
+    "review": "Tenía miedo en comprar porque es todo online, pero el equipo de atención al cliente me atendió de la mejor manera."
+},
+{
+    "nombre": "Delfina Pérez",
+    "imagen": "http://www.lugo.uned.es/wp-content/uploads/2014/05/personas.jpg",
+    "review": "Ya he comprado varias veces en la plataforma y nunca tuve un problema. Recomendadísimo este sitio."
+},
+{
+    "nombre": "Matías Hernández",
+    "imagen": "https://www.contrareplica.mx/uploads/galerias/normal/d51adde6198cd2e5a32ddda82d2ee9b6.jpg",
+    "review": "Tienen la mejor cotización del mercado y su atención es increíble. Los productos además, son de muy buena calidad"
+}
+]

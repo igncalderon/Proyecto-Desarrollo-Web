@@ -75,48 +75,10 @@ let productos = [
 let carroComprador = []
 $(".finalizarCarrito").hide()
 
-
-// FUNCION SCROLL A CART
-$(document).ready(function() {
-    $('a[href^="#"]').click(function() {
-      var destino = $(this.hash);
-      if (destino.length == 0) {
-        destino = $('a[name="' + this.hash.substr(1) + '"]');
-      }
-      if (destino.length == 0) {
-        destino = $('html');
-      }
-      $('html, body').animate({ scrollTop: destino.offset().top }, 1000);
-      return false;
-    });
-  });
-
-
-//   CARGO LOS PRODUCTOS
-for(producto of productos){
-    $(".section-cards").prepend(
-        `<div class="card__accesorios" data-value=${producto.id}>
-        <div class="image-section">
-           <img src=${producto.imagen} alt="">
-        </div>
-        <div class="description">
-           <h1 class="nombre-articulo">${producto.name}</h1>
-           <p><b>$</b><span>${producto.precio}</span><del>${producto.precioViejo}</del></p>  
-        </div>
-        <div class="button-group">
-        <input class="cantidad-articulo" type="number" id="cantidad${producto.id}" value="1" min="1">
-               
-        <button onclick=carrito(this.id) id=${producto.id} class="cart">Añadir al carro</button>
-        </div>
-        <div class="star-icons">
-           <a href=""><i class="fas fa-star"></i></a>
-           <a href=""><i class="fas fa-star"></i></a>
-           <a href=""><i class="fas fa-star-half-alt"></i></a>
-        </div>
-     </div>`
-    )
+let obtenerLocalStorageName = localStorage.getItem("usuario")
+if(obtenerLocalStorageName){
+    $("#titulo-accesorios").html(`¡Bienvenido ${obtenerLocalStorageName}!`)
 }
-
 
 const carrito = (id) =>{
     
@@ -130,7 +92,7 @@ const carrito = (id) =>{
    
     for (let i = 0; i <productos.length; i++){
         if(id == productos[i].id){
-            console.log(carroComprador)
+           
             if(!estaEnElCarrito(id)){
                 productos[i].cantidad = cantidadItemSeleccionado
                 carroComprador.push(productos[i]) 
@@ -175,7 +137,7 @@ const borrarItemCarrito = (itemBorrado) =>{
     let nuevoCart = carroComprador.filter((eliminarItem) => {
         return eliminarItem.id != itemBorrado
     })
-    console.log(encontrado[0])
+ 
     $(`#${encontrado[0].name}`).remove()
     carroComprador = nuevoCart
     
@@ -194,14 +156,20 @@ const actualizarTotal = () => {
 
 
 const finalizarCarrito = () => {
-    numeroDeCompra = Math.floor(Math.random() * (1000 - 100))
-    swal("¡COMPRA CONCRETADA!", "TU NÚMERO DE COMPRA ES: " +numeroDeCompra+ ". CONTÁCTENOS", "success");
-    carroComprador = []
-    setTimeout(() => {
-        $(`.items-cart`).empty()
-        ocultarElementosCarrito()
-        actualizarCantidadNavBar()
-    }, 2000);
+    
+    if(localStorage.getItem("usuario")){
+        numeroDeCompra = Math.floor(Math.random() * (1000 - 100))
+        swal("¡COMPRA CONCRETADA!", "TU NÚMERO DE COMPRA ES: " +numeroDeCompra+ ". CONTÁCTENOS", "success");
+        carroComprador = []
+        setTimeout(() => {
+            $(`.items-cart`).empty()
+            ocultarElementosCarrito()
+            actualizarCantidadNavBar()
+        }, 2000);
+    }else{
+        swal("Debes ingresar tu nombre antes de finalizar la compra", "", "warning");
+    }
+   
     
 }
 
@@ -215,3 +183,60 @@ const actualizarCantidadNavBar = () => {
     const cartCantidad = document.getElementById('cart_menu_num')
     cartCantidad.textContent = carroComprador.length
 }
+
+const ingresarUsuario = () => {
+    const expRegNombre=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    const nombreUsuario = $("#name-usuario").val()
+    if(!expRegNombre.exec(nombreUsuario) || !nombreUsuario){
+        swal("Nombre de usuario inválido","", "warning");
+    }else{
+        localStorage.setItem("usuario", nombreUsuario)
+       $("#titulo-accesorios").html(`¡Bienvenido ${nombreUsuario}!`)
+        
+    }
+  
+}
+
+
+// FUNCION SCROLL A CART
+$(document).ready(function() {
+    $('a[href^="#"]').click(function() {
+      var destino = $(this.hash);
+      if (destino.length == 0) {
+        destino = $('a[name="' + this.hash.substr(1) + '"]');
+      }
+      if (destino.length == 0) {
+        destino = $('html');
+      }
+      $('html, body').animate({ scrollTop: destino.offset().top }, 1000);
+      return false;
+    });
+  });
+
+
+//   CARGO LOS PRODUCTOS
+for(producto of productos){
+    $(".section-cards").prepend(
+        `<div class="card__accesorios" data-value=${producto.id}>
+        <div class="image-section">
+           <img src=${producto.imagen} alt="">
+        </div>
+        <div class="description">
+           <h1 class="nombre-articulo">${producto.name}</h1>
+           <p><b>$</b><span>${producto.precio}</span><del>${producto.precioViejo}</del></p>  
+        </div>
+        <div class="button-group">
+        <input class="cantidad-articulo" type="number" id="cantidad${producto.id}" value="1" min="1">
+               
+        <button onclick=carrito(this.id) id=${producto.id} class="cart">Añadir al carro</button>
+        </div>
+        <div class="star-icons">
+           <a href=""><i class="fas fa-star"></i></a>
+           <a href=""><i class="fas fa-star"></i></a>
+           <a href=""><i class="fas fa-star-half-alt"></i></a>
+        </div>
+     </div>`
+    )
+}
+
+
